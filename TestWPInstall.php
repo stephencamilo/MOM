@@ -1,11 +1,26 @@
 <?php
-
-use Symfony\Component\BrowserKit\HttpBrowser;
-use Symfony\Component\HttpClient\HttpClient;
-
 require __DIR__.'/vendor/autoload.php';
 
-$browser = new HttpBrowser(HttpClient::create());
+use Symfony\Component\Panther\Client;
 
-$browser->request('GET', $argv[1]);
-$browser->submitForm('Continue');
+$client = Client::createChromeClient();
+
+$client->request('GET', $argv[1]);
+
+$crawler = $client->waitForVisibility('#language-continue');
+$client->submitForm('Continue');
+
+$crawler = $client->waitForVisibility('a.button');
+$client->clickLink('Let’s go!');
+
+$crawler = $client->waitForVisibility('table.form-table');
+$client->submitForm('Submit' ,[
+    'dbname' => 'wordpressx',
+    'uname' => 'wordpressx',
+    'pwd' => 'wordpressx',
+]);
+
+$crawler = $client->waitForVisibility('a.button');
+$client->clickLink('Run the installation');
+
+$client->takeScreenshot('screen.png');

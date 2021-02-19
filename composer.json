@@ -4,5 +4,9 @@
         "symfony/http-client": "^5.2",
         "symfony/mime": "^5.2",
         "symfony/console": "^5.2"
+    },
+    "require-dev": {
+        "symfony/panther": "^1.0",
+        "dbrekelmans/bdi": "^0.3.0"
     }
 }
