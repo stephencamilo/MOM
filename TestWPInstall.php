@@ -8,8 +8,11 @@ $client = Client::createChromeClient();
 
 $client->request("GET", $argv[1]);
 
-$crawler = $client->waitForVisibility("#language-continue");
-$client->submitForm("Continue");
+try {
+    $crawler = $client->waitForVisibility("#language-continue");
+    $client->submitForm("Continue");
+} catch (Exception $e) {
+}
 
 try {
     $crawler = $client->waitForVisibility("a.button");
@@ -42,7 +45,6 @@ try {
         "admin_email" => "$argv[2]@$argv[2].local",
     ]);
 } catch (Exception $e) {
-    var_dump($e);
 }
 
 $client->takeScreenshot("screen.png");
