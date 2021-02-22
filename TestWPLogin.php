@@ -16,7 +16,7 @@ try {
         "log In",
         [
             "user_login" => $argv[2],
-            "user_pass" => $argv[3],
+            "user_pass" => $argv[3]
         ]
     );
 } catch (Exception $e) {
