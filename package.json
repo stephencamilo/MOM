@@ -1,0 +1,23 @@
+{
+  "name": "mom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "WPLoginTest.js",
+  "dependencies": {
+    "puppeteer": "^7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephencamilo/MOM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephencamilo/MOM/issues"
+  },
+  "homepage": "https://github.com/stephencamilo/MOM#readme"
+}
