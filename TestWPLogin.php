@@ -11,7 +11,6 @@ $client->request("GET", $argv[1]);
 var_dump($argv[3]);
 
 try {
-    $crawler = $client->waitForVisibility("#wp-submit");
     $client->submitForm(
         "log In",
         [
