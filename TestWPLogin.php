@@ -4,22 +4,16 @@ require __DIR__ . "/vendor/autoload.php";
 
 use Symfony\Component\Panther\Client;
 
-$client = Client::createChromeClient();
+$client = Client::createFirefoxClient();
 
 $client->request("GET", $argv[1]);
 
-var_dump($argv[3]);
-
-try {
-    $client->submitForm(
-        "log In",
-        [
-            "user_login" => $argv[2],
-            "user_pass" => $argv[3]
-        ]
-    );
-} catch (Exception $e) {
-    var_dump($e);
-}
+$client->submitForm(
+    "#wp-submit",
+    [
+        "user_login" => $argv[2],
+        "user_pass" => $argv[3]
+    ]
+);
 
 $client->takeScreenshot("screen.png");
