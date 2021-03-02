@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . "/vendor/autoload.php";
-//  php ./TestWPInstall.php "url" "projectname" "pass"
+//  php ./TestWPInstall.php "url" "projectname" "pass".
 
 use Symfony\Component\Panther\Client;
 
